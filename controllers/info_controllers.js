@@ -18,7 +18,30 @@ const get_info_id = async (ctx) => {
   }
 }
 
+const get_info_get = async (ctx) => {
+  const { id } = ctx.query
+  try {
+    const info = await info_model.info_select_id(id)
+    ctx.body = info
+  } catch (error) {
+    ctx.throw(400, error)
+  }
+}
+
+const get_info_post = async (ctx) => {
+  ctx.body = ctx.body
+  // const { id } = ctx.body
+  // try {
+  //   const info = await info_model.info_select_id(id)
+  //   ctx.body = info
+  // } catch (error) {
+  //   ctx.throw(400, error)
+  // }
+}
+
 module.exports = {
   get_info,
-  get_info_id
+  get_info_id,
+  get_info_get,
+  get_info_post
 }
