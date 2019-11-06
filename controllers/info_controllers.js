@@ -19,7 +19,8 @@ const get_info_id = async (ctx) => {
 }
 
 const get_info_get = async (ctx) => {
-  const { id } = ctx.query
+  // ctx.body = ctx.request.body
+  const { id } = ctx.request.body
   try {
     const info = await info_model.info_select_id(id)
     ctx.body = info
@@ -29,14 +30,13 @@ const get_info_get = async (ctx) => {
 }
 
 const get_info_post = async (ctx) => {
-  ctx.body = ctx.body
-  // const { id } = ctx.body
-  // try {
-  //   const info = await info_model.info_select_id(id)
-  //   ctx.body = info
-  // } catch (error) {
-  //   ctx.throw(400, error)
-  // }
+  const { id } = ctx.request.body
+  try {
+    const info = await info_model.info_select_id(id)
+    ctx.body = info
+  } catch (error) {
+    ctx.throw(400, error)
+  }
 }
 
 module.exports = {

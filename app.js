@@ -8,7 +8,7 @@ const logger = require('koa-logger')
 // const cors = require("cors");
 const cors = require('koa-cors')
 const index = require('./routes/index')
-app.use(cors())
+
 // const users = require('./routes/users')
 
 // const proxy = require('koa2-proxy-middleware')
@@ -27,7 +27,8 @@ onerror(app)
 
 // middlewares
 app.use(bodyparser({
-  enableTypes:['json', 'form', 'text']
+  enableTypes:['json', 'form', 'text'],
+  multipart: true
 }))
 app.use(json())
 app.use(logger())
@@ -37,7 +38,7 @@ app.use(views(__dirname + '/views', {
   extension: 'pug'
 }))
 
-
+app.use(cors())
 // logger
 app.use(async (ctx, next) => {
   const start = new Date()
