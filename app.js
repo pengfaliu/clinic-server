@@ -56,6 +56,12 @@ app.use(index.routes(), index.allowedMethods())
 // 　　alloweHeaders: ["Content-Type", "application/json;charset=utf-8;application/x-www-form-urlencoded"]
 // }));
 
+// const port = process.env.PORT || 3000
+
+// app.server = app.listen(port, () => {
+//   console.log(`server running @ http://localhost:${port}`)
+// })
+
 // error-handling
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
