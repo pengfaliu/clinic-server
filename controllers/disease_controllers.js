@@ -16,7 +16,7 @@ const disease_type = async (ctx) => {
 const disease_list = async (ctx) => {
   const {FDiseaseTypeID, pageindex, pagesize} = ctx.request.body
   try {
-    const data = await disease_model.disease_list_query (FDiseaseTypeID, pageindex, pagesize)
+    const { recordset: data } = await disease_model.disease_list_query (FDiseaseTypeID, pageindex, pagesize)
     ctx.body = {code: 200, data}
   } catch (error) {
     ctx.throw(400, error)
