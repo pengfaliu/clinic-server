@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const http = require('http')
 const app = new Koa()
 const views = require('koa-views')
 const json = require('koa-json')
@@ -22,8 +23,6 @@ const index = require('./routes/index')
 
 // error handler
 onerror(app)
-
-
 
 // middlewares
 app.use(bodyparser({

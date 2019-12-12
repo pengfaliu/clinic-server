@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "cors": "^2.8.5",
+    "http": "0.0.0",
     "koa-cors": "0.0.16",
     "mssql": "^5.1.0",
     "nodemon": "^1.19.1"
