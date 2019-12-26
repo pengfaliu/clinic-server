@@ -5,6 +5,7 @@ const disease_model = require('../db/disease_model')
  * @param {*} ctx
  */
 const disease_type = async (ctx) => {
+  ctx.body = ctx.header
   try {
     const { recordset: allData } = await disease_model.disease_type_query()
     let data = allData.filter(data => data.FParentID === 0)

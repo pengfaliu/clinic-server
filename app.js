@@ -6,6 +6,11 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+// const jwt = require('jsonwebtoken')
+// const jwtKoa = require('koa-jwt')
+// const util = require('util')
+// const verify = util.promisify(jwt.verify) // 解密
+// const secret = 'jwt demo'
 // const cors = require("cors");
 const cors = require('koa-cors')
 const index = require('./routes/index')
@@ -46,6 +51,10 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
 
+// app.use(jwtKoa({secret}).unless({
+//   path: [/^\/api\/login/] // 数组中的路径不需要进行jwt验证
+// }))
+
 // routes
 app.use(index.routes(), index.allowedMethods())
 // app.use(users.routes(), users.allowedMethods())
@@ -55,11 +64,11 @@ app.use(index.routes(), index.allowedMethods())
 // 　　alloweHeaders: ["Content-Type", "application/json;charset=utf-8;application/x-www-form-urlencoded"]
 // }));
 
-// const port = process.env.PORT || 3000
+const port = process.env.PORT || 9000
 
-// app.server = app.listen(port, () => {
-//   console.log(`server running @ http://localhost:${port}`)
-// })
+app.server = app.listen(port, () => {
+  console.log(`server running @ http://localhost:${port}`)
+})
 
 // error-handling
 app.on('error', (err, ctx) => {
