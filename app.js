@@ -6,6 +6,7 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const response_formatter = require('./middleware/response_formatter')
 // const jwt = require('jsonwebtoken')
 // const jwtKoa = require('koa-jwt')
 // const util = require('util')
@@ -54,6 +55,8 @@ app.use(async (ctx, next) => {
 // app.use(jwtKoa({secret}).unless({
 //   path: [/^\/api\/login/] // 数组中的路径不需要进行jwt验证
 // }))
+
+app.use(response_formatter)
 
 // routes
 app.use(index.routes(), index.allowedMethods())

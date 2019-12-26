@@ -12,7 +12,7 @@ const disease_type = async (ctx) => {
     data.forEach(dataF => {
       dataF.childrenList = allData.filter(dataS => dataF.FDiseaseTypeID === dataS.FParentID)
     });
-    ctx.body = {code: 200, data: data}
+    ctx.body = data
   } catch (error) {
     ctx.throw(400, error)
   }
