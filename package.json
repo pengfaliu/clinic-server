@@ -22,13 +22,18 @@
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
     "koa2-proxy-middleware": "0.0.4",
-    "pug": "^2.0.3"
-  },
-  "devDependencies": {
+    "pug": "^2.0.3",
     "cors": "^2.8.5",
     "http": "0.0.0",
     "koa-cors": "0.0.16",
     "mssql": "^5.1.0",
     "nodemon": "^1.19.1"
+  },
+  "apidoc": {
+    "name": "知识库API",
+    "version": "1.0.0",
+    "title": "知识库",
+    "descreption": "知识库",
+    "url": "http://127.0.0.1:9000"
   }
 }

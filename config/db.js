@@ -2,7 +2,9 @@ var config = {
   user: 'sa',
   password: '123$%^A',
   server: '192.168.1.198',
-  database: 'ZL_CWKLDGE',
+  // port: 55616,
+  // database: 'ZL_CWKLDGE',
+  database: 'ODR_DB',
   options: {
     encrypt: true
   },

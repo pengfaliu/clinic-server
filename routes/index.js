@@ -5,6 +5,7 @@ const info = require('./info')
 const infos = require('./infos')
 const disease = require('./disease')
 const user = require('./user')
+const report = require('./report')
 
 router
   .use('/api', users.routes())
@@ -12,5 +13,6 @@ router
   .use('/api', info.routes())
   .use('/api', infos.routes())
   .use('/api', disease.routes())
+  .use('/api', report.routes())
 
 module.exports = router

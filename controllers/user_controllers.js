@@ -11,6 +11,7 @@ const user_login = async (ctx) => {
   try {
     if (FName && FPassword) {
       const { recordset: userData } = await user_model.user_login(FName, FPassword)
+      console.log(userData)
       if (userData.length) {
         let userToken = {
           name: FName
